@@ -1,27 +1,41 @@
 import "./styles.css";
 const square = document.querySelector("div");
 const span = document.querySelector("span");
+const form = document.querySelector("form");
+const input = document.querySelector("input");
 
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+  console.log(event);
+});
+
+input.addEventListener("keydown", (event) => {
+  if (event.key === "t") {
+    input.style.borderColor = "red";
+  }
+  console.log(event);
+});
 //bubbling
-square.addEventListener(
-  "click",
-  () => {
-    console.log("click on div");
-  },
-  {
-    capture: true,
-  }
-);
+// square.addEventListener(
+//   "click",
+//   () => {
+//     console.log("click on div");
+//   },
+//   {
+//     capture: true,
+//   }
+// );
 
-span.addEventListener(
-  "click",
-  () => {
-    console.log("click on span");
-  },
-  {
-    capture: true,
-  }
-);
+// span.addEventListener(
+//   "click",
+//   () => {
+//     console.log("click on span");
+//   },
+//   {
+//     capture: true,
+//   }
+// );
+
 //facon moderne d'ecouter les evenements avec la méthode addEventListener
 // const btn = document.querySelector("button");
 // btn.addEventListener("click", () => {
